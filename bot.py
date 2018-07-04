@@ -22,7 +22,7 @@ def get_results(for_country):
         code = i["fifa_code"]
         
         if code == for_country:
-            return  ",".join((win, draw, loss, points))
+            return  win, draw, loss, points
 
     return "Country not Found"
 
@@ -40,5 +40,3 @@ updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('results', results))
 
 updater.start_polling()
-
-    
