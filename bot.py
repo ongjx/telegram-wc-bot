@@ -51,7 +51,7 @@ def get_country_data(country_name):
 
         newlist.append([i['away_team'], i['away_team_events'],
          i['home_team'], i['home_team_events'], i['winner']])
-    return newlist    
+    return newlist[-1]    
 
 updater = Updater('594678115:AAFtvy1lRRpTTuPWc_FCpE0EbQCiCeRRmkI')
 dispatcher = updater.dispatcher
