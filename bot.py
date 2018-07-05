@@ -32,7 +32,7 @@ def results(bot, update):
     update.message.reply_text(get_score(country))
     update.message.reply_text(get_country_data(country))
 def start(bot, update):
-    update.message.reply_text("Hello!")
+    update.message.reply_text("Hello and Welcome to Jun Xiang's World Cup Bot!\nTo begin, please type /results followed by the country's code name.\nEg. /results KOR")
 
 def inline(bot,update):
     reply_keyboard = [['results','start']]
