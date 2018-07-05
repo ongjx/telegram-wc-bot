@@ -51,7 +51,7 @@ def get_country_data(country_name):
 
         newlist.append([i['away_team'], i['away_team_events'],
          i['home_team'], i['home_team_events'], i['winner']])
-    if winner == 'null':
+    if winner == None:
         return newlist[-2]
     else:
         return newlist[-1]    
