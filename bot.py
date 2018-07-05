@@ -52,8 +52,9 @@ def get_country_data(country_name):
         newlist.append([i['away_team'], i['away_team_events'],
          i['home_team'], i['home_team_events'], i['winner']])
     if winner == 'null':
-        return(newlist[-2])
-    return newlist[-1]    
+        return newlist[-2]
+    else:
+        return newlist[-1]    
 
 updater = Updater('594678115:AAFtvy1lRRpTTuPWc_FCpE0EbQCiCeRRmkI')
 dispatcher = updater.dispatcher
