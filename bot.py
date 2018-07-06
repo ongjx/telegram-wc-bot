@@ -60,6 +60,6 @@ updater = Updater('594678115:AAFtvy1lRRpTTuPWc_FCpE0EbQCiCeRRmkI')
 dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler('start', start))
 dispatcher.add_handler(CommandHandler('results', results))
-dispatcher.add_handler(CommandHandler('inline', inline))
+# dispatcher.add_handler(CommandHandler('inline', inline))
 
 updater.start_polling()
