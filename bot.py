@@ -9,7 +9,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 def get_country_data_today():
-    res = requests.get("https://worldcup.sfg.io/matches/today").text
+    res = requests.get("https://worldcup.sfg.io/matches").text
     out = json.loads(res)
     newlist = []
     for match in out:
