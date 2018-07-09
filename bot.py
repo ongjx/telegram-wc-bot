@@ -27,8 +27,11 @@ def get_country_data_today():
             except:
                 string = stage_name + ": " + home_team + " vs " + away_team
         except:
-            string = home_team + " - " + str(home_team_score) +  " vs " + away_team +  " - " + str(away_team_score) + " ( " + time + " )"
-            newlist.append(string)
+            try:
+                string = home_team + " - " + str(home_team_score) +  " vs " + away_team +  " - " + str(away_team_score) + " ( " + time + " )"
+                newlist.append(string)
+            except:
+                break
     if len(newlist) == 0:
         return "There are no matches today"
     return newlist
@@ -59,7 +62,7 @@ def results(bot, update):
     update.message.reply_text(get_country_data_today())
 
 def start(bot, update):
-    update.message.reply_text("Hello and Welcome to Jun Xiang's World Cup Bot!\nTo begin, please type /results followed by the country's code name.\nEg. /results KOR")
+    update.message.reply_text("Hello and Welcome to Jun Xiang's World Cup Bot!\nTo begin, please type /results")
 
 def inline(bot,update):
     reply_keyboard = [['Today\'s Results','All Semi Final', 'start']]
