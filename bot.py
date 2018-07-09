@@ -8,7 +8,7 @@ import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
-def get_country_data_today():
+def get_all_data():
     res = requests.get("https://worldcup.sfg.io/matches").text
     out = json.loads(res)
     newlist = []
@@ -32,11 +32,9 @@ def get_country_data_today():
                 newlist.append(string)
             except:
                 break
-    if len(newlist) == 0:
-        return "There are no matches today"
-    return newlist
+    return string
 
-def get_all_data():
+def get_all_data1():
     res = requests.get("https://worldcup.sfg.io/matches/").text
     out = json.loads(res)
 # def get_score(for_country):
@@ -59,7 +57,7 @@ def get_all_data():
 
 def results(bot, update):
     country = update.message.text.replace('/results ', '')
-    update.message.reply_text(get_country_data_today())
+    update.message.reply_text(get_all_data())
 
 def start(bot, update):
     update.message.reply_text("Hello and Welcome to Jun Xiang's World Cup Bot!\nTo begin, please type /results")
@@ -72,7 +70,7 @@ def inline(bot,update):
 updater = Updater('586483991:AAEjR5s0ZtN3yY2NC-rGjQgBNYul35Hc5y4')
 dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler('start', start))
-dispatcher.add_handler(CommandHandler('results', results))
+dispatcher.add_handler(CommandHandler('overall_results', results))
 dispatcher.add_handler(CommandHandler('inline', inline))
 
 updater.start_polling()
